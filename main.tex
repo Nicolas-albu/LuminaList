@@ -1,14 +1,18 @@
 \documentclass[letterpaper, 10pt]{article}
-
 \input{preamble}
 
+\input{title}
+
 \begin{document}
-    \input{title}
-    \vspace{1cm}
+    \maketitle
 
     \begin{exercise}{I}
-        Este é o ambiente para escrever os seus exercícios.
+        \lipsum[1-1]
     \end{exercise}
     \input{solutions/solution_one}
-    
+
+    \begin{exercise}{II}
+        \lipsum[2-2]
+    \end{exercise}
+    \input{solutions/solution_two}
 \end{document}

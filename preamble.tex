@@ -1,13 +1,18 @@
-% PACOTES
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{tcolorbox}
+\tcbuselibrary{breakable}
 \usepackage{xcolor}
 \usepackage{geometry}
 
+% Pacote apenas para demonstração, pode remove-lo.
+\usepackage{lipsum}
+
 % para disciplina de "Algoritmos e Estrutura de Dados"
-\usepackage{algpseudocode}
-\usepackage{algorithm}
-% \usepackage{pgfplots}
+% \usepackage{algpseudocode}
+% \usepackage{algorithm}
 
 % para cálculo e símbolos matemáticos
 \usepackage{amsfonts}
@@ -19,19 +24,25 @@
 
 
 % CONFIGURAÇÕES GERAIS
-% \pgfplotsset{compat=1.18}
-\geometry{  % Ajusta a margem do artigo
-    left=1.5cm,
+% Ajusta a margem
+\geometry{
     right=1.5cm,
+    left=1.5cm,
+    bottom=2cm,
     top=2cm,
-    bottom=2cm
 }
 
+% Configura a quebra do tcolorbox
+\tcbset{breakable, pad at break=2mm}
 
-% COMANDOS & AMBIENTES
-% Defina um novo ambiente "exercise" para simplificar o formato
+
+% AMBIENTES
+% Defina um novo ambiente "exercise"
 \newenvironment{exercise}[2][]{
-    \begin{tcolorbox}[colback=blue!20!white, colframe=blue!40!black] \color{black}
+    \begin{tcolorbox}[
+        colback=blue!20!white,
+        colframe=blue!40!black,
+        ]
         \ifx\relax#1\relax
             \textbf{\textcolor{blue!40!black}{Exercício #2}}
         \else
@@ -43,8 +54,10 @@
 
 % Definindo o ambiente "solution" padrão
 \newenvironment{solution}[1][]{
-    \begin{center}
-    \begin{tcolorbox}[colback=green!15!white, colframe=green!40!black] \color{black}
+    \begin{tcolorbox}[
+        colback=green!15!white,
+        colframe=green!40!black,
+        ]
         \ifx\relax#1\relax
             % Se não houver um título personalizado
         \else
@@ -52,13 +65,14 @@
         \fi
 }{
     \end{tcolorbox}
-    \end{center}
 }
 
 % Definindo o ambiente "solutionitem" para itens
 \newenvironment{solutionitem}[2][]{
-    \begin{center}
-    \begin{tcolorbox}[colback=green!15!white, colframe=green!40!black] \color{black}
+    \begin{tcolorbox}[
+        colback=green!15!white,
+        colframe=green!40!black,
+        ]
         \begin{enumerate}
             \item[(#1)] #2
         \end{enumerate}
@@ -66,5 +80,4 @@
         \vspace{1.5ex}\textbf{Solução}
 }{
     \end{tcolorbox}
-    \end{center}
 }
