@@ -1,0 +1,70 @@
+% PACOTES
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{geometry}
+
+% para disciplina de "Algoritmos e Estrutura de Dados"
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+% \usepackage{pgfplots}
+
+% para cálculo e símbolos matemáticos
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{calc}
+
+
+% CONFIGURAÇÕES GERAIS
+% \pgfplotsset{compat=1.18}
+\geometry{  % Ajusta a margem do artigo
+    left=1.5cm,
+    right=1.5cm,
+    top=2cm,
+    bottom=2cm
+}
+
+
+% COMANDOS & AMBIENTES
+% Defina um novo ambiente "exercise" para simplificar o formato
+\newenvironment{exercise}[2][]{
+    \begin{tcolorbox}[colback=blue!20!white, colframe=blue!40!black] \color{black}
+        \ifx\relax#1\relax
+            \textbf{\textcolor{blue!40!black}{Exercício #2}}
+        \else
+            \textbf{\textcolor{blue!40!black}{Exercício #2: #1}}
+        \fi
+}{
+    \end{tcolorbox}
+}
+
+% Definindo o ambiente "solution" padrão
+\newenvironment{solution}[1][]{
+    \begin{center}
+    \begin{tcolorbox}[colback=green!15!white, colframe=green!40!black] \color{black}
+        \ifx\relax#1\relax
+            % Se não houver um título personalizado
+        \else
+            \textbf{Solução #1}
+        \fi
+}{
+    \end{tcolorbox}
+    \end{center}
+}
+
+% Definindo o ambiente "solutionitem" para itens
+\newenvironment{solutionitem}[2][]{
+    \begin{center}
+    \begin{tcolorbox}[colback=green!15!white, colframe=green!40!black] \color{black}
+        \begin{enumerate}
+            \item[(#1)] #2
+        \end{enumerate}
+
+        \vspace{1.5ex}\textbf{Solução}
+}{
+    \end{tcolorbox}
+    \end{center}
+}
